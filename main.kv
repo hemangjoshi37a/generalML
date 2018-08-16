@@ -1,0 +1,833 @@
+#: kivy 1.1.0
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+
+
+ScreenManagement:
+    transition : FadeTransition()
+    MainScreen:
+    HowManyEx :
+    LoadDialog:
+    GetMoreData :
+    PredictCat :
+    PredQuant:
+    KernelApprox:
+    LabelData:
+    Sample100K:
+    Sample100K2:
+    Sample10K:
+    Sample10K2:
+    Sample10K3:    
+    PredStrct:
+    RandPCA:
+    IsoSpectralEmbed:
+    ElasticNetLasso:
+    FewFeatIMP:
+    SGDR:
+    RRSVR:
+    SVRER:
+    MiniBKM:
+    KMean:
+    SpectralClust:
+    Visual:
+    TextData:
+    KNC:
+    NaiveBayes:
+    SVCEC:
+    MShiftVBGMM:
+    Error:
+    LSVC:
+    SGDC:
+    NumCatK:
+    LLE:
+        
+<MainScreen>
+    name : "main"
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "howmanyex"
+        text : "Welcome"
+        font_size : 50
+        pos_hint : {"left":0.75, 'top':0.5}
+        
+<HowManyEx>
+    name : "howmanyex"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1       
+        text : "How many training examples do you have ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "getmoredata"
+        text : "Less Than 50"
+        pos_hint : {"right":0.35 , 'top':0.4}
+        
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "predictcat"
+        text : "More Than 50"
+        pos_hint : {"right":0.95 , 'top':0.4}
+                
+   
+<GetMoreData>
+    name : "getmoredata"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "Get some more data and press Back."
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "howmanyex"
+        text : "Back"
+        pos_hint : {"right":0.35 , 'top':0.4}
+        
+        
+<PredictCat>
+    name : "predictcat"
+    
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1     
+        text : "Are you predicting a catagory ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+        
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "labeldata"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+        
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "predquant"
+        text : "No"
+        pos_hint : {"right":0.95 , 'top':0.4}
+        
+
+<PredQuant>
+    name : "predquant"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "Are you predicting a quantity ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "sample100k"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+        
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "visual"
+        text : "No"
+        pos_hint : {"right":0.95 , 'top':0.4}
+        
+<LabelData>
+    name : "labeldata"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "Is your data labeled ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :  
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "sample100k2"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+        
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "numcatk"
+        text : "No"
+        pos_hint : {"right":0.95 , 'top':0.4}
+<PredStrct>
+    name : "predstrct"   
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "Predicting Stucture Not working ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "main"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+        
+
+<RandPCA>
+    name : "randpca"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "Rand PCA Not working ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "sample10k"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+        
+<IsoSpectralEmbed>
+    name : "isospectralembed"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "Isometric Spectral Cluster Embed Not working ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "lle"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+
+		
+<ElasticNetLasso>
+    name : "elasticnetlasso"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "Elastic Net Lasso Not working ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "main"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+
+		
+<FewFeatimp>
+    name : "fewfeatimp"
+    
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : " Are few features important ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+        
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "elasticnetlasso"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+        
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "rrsvr"
+        text : "No"
+        pos_hint : {"right":0.95 , 'top':0.4}
+        
+
+<SGDR>
+    name : "sgdr"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "SGDR Not working ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "main"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+        
+        
+<RRSVR>
+    name : "rrsvr"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "RRSVR Not working ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "svrer"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+
+<SVRER>
+    name : "svrer"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "SVRER Not working ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "main"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+
+
+<MiniBKM>
+    name : "minibkm"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "MiniBKM Not working ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "main"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+
+<KMean>
+    name : "kmean"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "KMean Not working ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "spectralclust"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+        
+<SpectralClust>
+    name : "spectralclust"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "SpectralClust Not working ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "main"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+
+		
+<Visual>
+    name : "visual"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "Are you visualizing data ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "randpca"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+        
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "predstrct"
+        text : "No"
+        pos_hint : {"right":0.95 , 'top':0.4}
+
+		
+<TextData>
+    name : "textdata"    
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "Is your data text ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+        
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "naivebayes"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+        
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "knc"
+        text : "No"
+        pos_hint : {"right":0.95 , 'top':0.4}
+        
+
+<KNC>
+    name : "knc"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "K-Nearest Neighbour Not working ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "svcec"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+
+        
+<NaiveBayes>
+    name : "naivebayes"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "Naive Bayes Not working ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "main"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+
+		
+<SVCEC>
+    name : "svcec"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "SVCEC Not working ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "main"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+
+		
+<MShiftVBGMM>
+    name : "mshiftvbgmm"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "Mean Shift VBGMM Is your data labeled ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "main"
+        text : "Go to home page"
+        pos_hint : {"right":0.35 , 'top':0.4}		
+		
+<Error>
+    name : "error"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "Error"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "main"
+        text : "Go to home page"
+        pos_hint : {"right":0.35 , 'top':0.4}
+
+        
+<LSVC>
+    name : "lsvc"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "Linear Support Vector Machine Classifier"
+        font_size : 25
+        pos : ((root.x+root.right)/2)-150,root.top-(root.top*0.15)
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release :  app.root.current= "loadfile"
+        text : "Open File"
+        pos_hint : {"right":0.35 , 'top':0.6}        
+
+
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "LSVC Not Working ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "textdata"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+
+		
+<SGDC>
+    name : "sgdc"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "SGDC Not working ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "kernelapprox"
+        text : "kernel approximation"
+        pos_hint : {"right":0.35 , 'top':0.4}
+
+		
+<NumCatK>
+    name : "numcatk"
+    
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "Number of categories known?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+        
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "sample10k2"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+        
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "sample10k3"
+        text : "No"
+        pos_hint : {"right":0.95 , 'top':0.4}
+        
+
+<Sample100K>
+    name : "sample100k"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "Sample more than 100K ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "fewfeatimp"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+        
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "sgdr"
+        text : "No"
+        pos_hint : {"right":0.95 , 'top':0.4}
+
+<Sample100K2>
+    name : "sample100k2"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "Sample more than 100K2 ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "lsvc"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+        
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "sgdc"
+        text : "No"
+        pos_hint : {"right":0.95 , 'top':0.4}
+				
+        
+<Sample10K2>
+    name : "sample10k2"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "Sample more than 10K2 ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "kmean"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+        
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "minibkm"
+        text : "No"
+        pos_hint : {"right":0.95 , 'top':0.4}
+
+		
+<Sample10K3>
+    name : "sample10k3"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "Sample more than 10K3 ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "mshiftvbgmm"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+        
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "error"
+        text : "No"
+        pos_hint : {"right":0.95 , 'top':0.4}
+        
+<Sample10K>
+    name : "sample10k"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "Sample more than 10K ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "isospectralembed"
+        text : "Yes"
+        pos_hint : {"right":0.35 , 'top':0.4}
+        
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "kernelapprox"
+        text : "No"
+        pos_hint : {"right":0.95 , 'top':0.4}
+        
+		
+<KernelApprox>
+    name : "kernelapprox"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "SGDC Not working ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "main"
+        text : "kernel approximation"
+        pos_hint : {"right":0.35 , 'top':0.4}
+		
+<LLE>
+    name : "lle"
+    Label :
+        font_size : 25
+        color : 1,0,0,1
+        size_hint: 0.3,0.1 
+        text : "LLE Not working ?"
+        pos : ((root.x+root.right)/2)-150,(root.top+root.y)/2
+    
+    Button :
+        font_size : 20    
+        color : 1,0,0,1
+        size_hint: 0.3,0.1
+        on_release : app.root.current= "main"
+        text : "Home page"
+        pos_hint : {"right":0.35 , 'top':0.4}
+
+
+
+
+
+<Root>:
+    text_input: text_input
+
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: None
+            height: 30
+            Button:
+                text: 'Load'
+                on_release: root.show_load()
+            Button:
+                text: 'Save'
+                on_release: root.show_save()
+
+        BoxLayout:
+            TextInput:
+                id: text_input
+                text: ''
+
+            RstDocument:
+                text: text_input.text
+                show_errors: True
+
+<LoadDialog>:
+    name : "loadfile"
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "vertical"
+        FileChooserListView:
+            id: filechooser
+
+        BoxLayout:
+            size_hint_y: None
+            height: 30
+            Button:
+                text: "Cancel"
+                on_release: root.cancel()
+
+            Button:
+                text: "Load"
+                on_release: root.load(filechooser.path, filechooser.selection)
+
+<SaveDialog>:
+    text_input: text_input
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "vertical"
+        FileChooserListView:
+            id: filechooser
+            on_selection: text_input.text = self.selection and self.selection[0] or ''
+
+        TextInput:
+            id: text_input
+            size_hint_y: None
+            height: 30
+            multiline: False
+
+        BoxLayout:
+            size_hint_y: None
+            height: 30
+            Button:
+                text: "Cancel"
+                on_release: root.cancel()
+
+            Button:
+                text: "Save"
+                on_release: root.save(filechooser.path, text_input.text)
