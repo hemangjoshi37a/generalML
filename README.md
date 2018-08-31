@@ -1,6 +1,6 @@
 ## Welcome to GeneralML from hj labs
 
-This library is for noobs to experts to create Machine learning application easily.
+This library is for noobs to experts to create Machine learning application easily and it is  in very initial stage.
 
 Please contribute your suggestions and corections to support our efforts.
 
