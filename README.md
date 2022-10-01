@@ -59,3 +59,14 @@ Place a custom order on hjLabs.in : [https://hjLabs.in](https://hjlabs.in/)
 - [ESP Matrix Display 5mm Acrylic Box](https://grabcad.com/library/esp-matrix-display-5mm-acrylic-box-1)
 - [Arcylic Bending Machine w/ Hot Air Gun](https://grabcad.com/library/arcylic-bending-machine-w-hot-air-gun-1)
 - [Automatic Wire Cutter/Stripper](https://grabcad.com/library/automatic-wire-cutter-stripper-1)
+
+## Our HuggingFace Models :
+- [hemangjoshi37a/autotrain-ratnakar_1000_sample_curated-1474454086 : Stock tip message NER(Named Entity Recognition or Token Classification) using HUggingFace-AutoTrain and LabelStudio and Ratnakar Securities Pvt. Ltd.](https://huggingface.co/hemangjoshi37a/autotrain-ratnakar_1000_sample_curated-1474454086)
+
+## Our HuggingFace Datasets :
+- [hemangjoshi37a/autotrain-data-ratnakar_1000_sample_curated : Stock tip message NER(Named Entity Recognition or Token Classification) using HUggingFace-AutoTrain and LabelStudio and Ratnakar Securities Pvt. Ltd.](https://huggingface.co/datasets/hemangjoshi37a/autotrain-data-ratnakar_1000_sample_curated)
+
+## We sell Gigs on Fiverr : 
+- [code android and ios app for you using flutter firebase software stack](https://business.fiverr.com/share/3v14pr)
+- [code custom algotrading software for zerodha or angel broking](https://business.fiverr.com/share/kzkvEy)
+
